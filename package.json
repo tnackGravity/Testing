@@ -1,0 +1,17 @@
+{
+  "name": "jw-conference-uci",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Crestron CH5 touch panel interface for the Jenny Wiley Conference Center (TSW-770 / CP4)",
+  "scripts": {
+    "start": "npx --yes http-server app -p 8080 -c-1 -o",
+    "joinmap": "node tools/gen-joinmap.js",
+    "vendor": "node tools/vendor.js",
+    "archive": "npm run vendor && ch5-cli archive -p jw-conference-uci -d app -o dist",
+    "deploy": "ch5-cli deploy -H $PANEL_HOST -t touchscreen dist/jw-conference-uci.ch5z"
+  },
+  "devDependencies": {
+    "@crestron/ch5-crcomlib": "^2.0.0",
+    "@crestron/ch5-utilities-cli": "^2.0.0"
+  }
+}

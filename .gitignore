@@ -1,0 +1,4 @@
+node_modules/
+dist/
+app/vendor/cr-com-lib.js
+.DS_Store

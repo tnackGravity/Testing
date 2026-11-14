@@ -1,0 +1,48 @@
+/*
+ * Design tokens - Jenny Wiley Conference Center
+ *
+ * Palette direction: Kentucky State Parks (parks.ky.gov) - forest greens, warm
+ * parchment and a trail-marker gold - set dark so the panel does not glare in a
+ * room dimmed for projection.
+ *
+ * NOTE (v0.1): the parks.ky.gov stylesheet could not be read programmatically,
+ * so these values are a close interpretation, not sampled hex codes. Swap the
+ * values in this one file to match the official brand sheet; nothing else in
+ * the project hard-codes a colour.
+ */
+:root {
+  /* Surfaces */
+  --c-bg:        #0E1F17;   /* deep forest */
+  --c-bg-2:      #132A1E;
+  --c-surface:   #1A3526;
+  --c-surface-2: #234632;
+  --c-surface-3: #2D5740;
+  --c-line:      rgba(240, 232, 212, 0.13);
+  --c-line-2:    rgba(240, 232, 212, 0.26);
+
+  /* Text */
+  --c-text:      #F4EFE1;   /* parchment */
+  --c-muted:     #A8B9A7;
+  --c-faint:     #71877A;
+
+  /* Accents */
+  --c-accent:     #E2B13A;  /* trail-marker gold: selected / active */
+  --c-accent-ink: #1C1A0E;
+  --c-lake:       #6FB3CC;  /* lake blue: information */
+  --c-ok:         #86C98A;
+  --c-warn:       #E08A3C;
+  --c-danger:     #DB5D4F;
+  --c-danger-ink: #2A0E0B;
+
+  /* Type - system stacks so nothing has to be fetched on the AV LAN.
+     Drop brand font files in app/assets/fonts and add @font-face to change. */
+  --f-display: "Noto Serif", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --f-ui: Roboto, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+  /* Shape */
+  --r-s: 10px;
+  --r-m: 16px;
+  --r-l: 24px;
+  --touch: 64px;            /* minimum touch target on the 7" panel */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
