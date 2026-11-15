@@ -1,6 +1,6 @@
 {
   "name": "jw-conference-uci",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Crestron CH5 touch panel interface for the Jenny Wiley Conference Center (TSW-770 / CP4)",
   "scripts": {

@@ -3,7 +3,7 @@
 Crestron HTML5 (CH5) user interface for the three-way divisible conference room at Jenny Wiley State Resort Park: Iroquois (106), Shawnee (107) and Cherokee (108).
 
 - **Target:** 3 × Crestron TSW-770 (1280 × 800), one per room, controlled by one CP4
-- **Status:** v0.1.0 — first UCI revision, for review. The CP4 program has not been written yet.
+- **Status:** v0.2.0 — second UCI revision, for review. The CP4 program has not been written yet.
 - **Basis:** Section 274100 (April 2026), especially 3.2 Programming; drawings AV-301, AV-302, AV-601, AV-602 (project 002283)
 
 ## Try the demo
@@ -36,11 +36,10 @@ Add `?room=B` to the URL to start at the Shawnee panel. Demo warm-up and cool-do
 | PIN lock | Optional lockout shown when the system is off |
 | Start | Two preset choices plus Manual controls, with a map of the current room layout |
 | Presentation (Preset 1) | Pick a wall plate to show, blank the screen, light scenes, display status |
-| Conference (Preset 2) | Pick an audio source, light scenes, shades |
+| Conference (Preset 2) | Pick an audio source, light scenes |
 | Video | Any source in the group to any projector in the group |
 | Audio Mixer | Program source, audio-follows-video, eight mic channels per room |
 | Lighting | Scenes per room, level presets per zone |
-| Shades | Open / stop / close per room |
 | Displays | Projector power, screen up/down, picture blank |
 | Room Layout | Divide or combine: all divided, Iroquois+Shawnee, Shawnee+Cherokee, all combined |
 | System | Vacancy timeout, PIN lock on/off, status |
@@ -89,7 +88,7 @@ The `archive` and `deploy` scripts use Crestron's `ch5-cli`. They were written f
 Every panel runs the same project with the same join numbers.
 
 - **Panel joins (1–99)** — presets, volume, shutdown, lock, layout. The CP4 applies them to whichever group that panel's room is currently in.
-- **Room joins (100s / 200s / 300s)** — projector, screen, lights, shades, mics for Iroquois / Shawnee / Cherokee.
+- **Room joins (100s / 200s / 300s)** — projector, screen, lights, mics for Iroquois / Shawnee / Cherokee.
 
 The CP4 tells each panel which rooms are in its group. The panel then shows controls for exactly those rooms, so panels in a combined group mirror each other.
 
@@ -99,7 +98,7 @@ These were decided to get a first revision built. Each is isolated so a change i
 
 1. **Colours.** The parks.ky.gov stylesheet could not be read programmatically, so the palette (forest green, parchment, trail-marker gold) is an interpretation of the Kentucky State Parks look, not sampled values. It is dark on purpose, so the panel does not glare in a room dimmed for projection. Everything lives in `app/css/tokens.css`.
 2. **No logo.** The header uses a text wordmark and a generic ridge mark. Supply the approved Kentucky State Parks artwork if it should appear.
-3. **Shades.** The spec calls for shade control (2.0.B, 3.2 Preset 2) but AV-601 shows no shade controller. Open / stop / close per room is included behind `features.shades` in `config.js`.
+3. **Shades.** Shade control was removed in v0.2.0 at the integrator's direction; AV-601 shows no shade controller. The spec still mentions it (2.0.B, 3.2 Preset 2), so this is a recorded deviation. Room joins +41 to +43 are left unused in case it returns.
 4. **Lighting zones.** Two zones per room are assumed (Front Row, Task Lighting) with four scenes. Real zone names, counts and nLight scene numbers need to come from the lighting provider.
 5. **Backup switch.** Spec 3.2.d describes one switch at the rack that powers on all rooms, divided, in Preset 1. AV-601 shows three (TOG-01/02/03), one per room. The simulator follows the spec wording.
 6. **Combining while running.** When rooms join a group that is already on, the simulator applies the running preset to the whole group. The spec does not say.

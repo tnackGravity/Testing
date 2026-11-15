@@ -48,7 +48,6 @@ button { font: inherit; color: inherit; }
 .btn-mini { width: 52px; min-height: 52px; padding: 0; border-radius: 14px; flex: none; }
 .btn-round { width: 60px; min-height: 60px; padding: 0; border-radius: 50%; flex: none; touch-action: none; }
 .btn-tile { flex: 1; min-height: 72px; flex-direction: column; gap: 4px; font-size: 18px; padding: 8px; }
-.btn-tall { min-height: 150px; font-size: 22px; gap: 10px; }
 .btn-wide { width: 100%; }
 .btn-primary { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-accent-ink); font-weight: 700; min-width: 220px; }
 .btn-ghost { background: transparent; min-width: 160px; }
@@ -125,7 +124,6 @@ button { font: inherit; color: inherit; }
 .btn.is-on .sig.is-live { background: #1f6b2a; box-shadow: none; }
 .scene-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .col .scene-row, .scene-row.two { grid-template-columns: 1fr 1fr; }
-.tri-row { display: grid; grid-template-columns: 1fr; gap: 12px; }
 .ds { display: flex; align-items: center; gap: 12px; }
 .ds .ico { color: var(--c-lake); }
 .ds-name { font-weight: 600; font-size: 17px; }

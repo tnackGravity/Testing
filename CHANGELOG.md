@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.0 — 2026-11-15
+
+- Removed shade control: the Shades tab, the Shades card on the Conference page, and room joins +41 to +43 (now unused)
+- Spec 3.2.b.2 (shades adjustable from the panel) is recorded as not provided in `docs/SPEC_TRACE.md`
+
 ## v0.1.0 — 2026-11-13
 
 First UCI revision for review.

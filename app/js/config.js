@@ -9,14 +9,13 @@
   'use strict';
 
   var CONFIG = {
-    version: '0.1.0',
+    version: '0.2.0',
     site: 'Jenny Wiley',
     siteSub: 'Conference Center',
     panel: { width: 1280, height: 800, model: 'TSW-770' },
 
     /* Feature flags - items still to be confirmed with the owner / other trades */
     features: {
-      shades: true,        // spec 2.0.B + 3.2 call for shade control; no shade hardware on AV-601 yet
       pinLock: true,       // spec 3.2.A.f - optional, at owner's discretion
       techPage: true
     },
@@ -164,9 +163,6 @@
           lightScene2: { o: 32, dir: 'both', d: 'Lighting scene: Presentation (task 50%, front row off) / fb' },
           lightScene3: { o: 33, dir: 'both', d: 'Lighting scene: Dim / fb' },
           lightScene4: { o: 34, dir: 'both', d: 'Lighting scene: Off / fb' },
-          shadeOpen:   { o: 41, dir: 'both', d: 'Shades open / fb' },
-          shadeClose:  { o: 42, dir: 'both', d: 'Shades close / fb' },
-          shadeStop:   { o: 43, dir: 'tx',   d: 'Shades stop' },
           micMute1:    { o: 51, dir: 'both', d: 'Mic 1 (Handheld 1) mute toggle / fb' },
           micMute2:    { o: 52, dir: 'both', d: 'Mic 2 (Handheld 2) mute toggle / fb' },
           micMute3:    { o: 53, dir: 'both', d: 'Mic 3 (Lavalier 1) mute toggle / fb' },

@@ -1,4 +1,4 @@
-# Join Map — Jenny Wiley Conference Center UCI v0.1.0
+# Join Map — Jenny Wiley Conference Center UCI v0.2.0
 
 > Generated from `app/js/config.js` by `npm run joinmap`. Do not edit by hand.
 
@@ -92,9 +92,6 @@ All three TSW-770 panels load the same project and use the same join numbers.
 | +32 | 132 | 232 | 332 | `lightScene2` | Both | Lighting scene: Presentation (task 50%, front row off) / fb |
 | +33 | 133 | 233 | 333 | `lightScene3` | Both | Lighting scene: Dim / fb |
 | +34 | 134 | 234 | 334 | `lightScene4` | Both | Lighting scene: Off / fb |
-| +41 | 141 | 241 | 341 | `shadeOpen` | Both | Shades open / fb |
-| +42 | 142 | 242 | 342 | `shadeClose` | Both | Shades close / fb |
-| +43 | 143 | 243 | 343 | `shadeStop` | Panel → CP4 | Shades stop |
 | +51 | 151 | 251 | 351 | `micMute1` | Both | Mic 1 (Handheld 1) mute toggle / fb |
 | +52 | 152 | 252 | 352 | `micMute2` | Both | Mic 2 (Handheld 2) mute toggle / fb |
 | +53 | 153 | 253 | 353 | `micMute3` | Both | Mic 3 (Lavalier 1) mute toggle / fb |

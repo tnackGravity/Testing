@@ -1,6 +1,6 @@
 # Spec trace — Section 274100, 3.2 Programming
 
-Where each requirement lives in UCI v0.1.0. "CP4" marks behaviour the control program must perform; the simulator (`app/js/sim.js`) already models it.
+Where each requirement lives in UCI v0.2.0. "CP4" marks behaviour the control program must perform; the simulator (`app/js/sim.js`) already models it.
 
 | Spec | Requirement | In the interface | CP4 |
 |---|---|---|---|
@@ -13,7 +13,7 @@ Where each requirement lives in UCI v0.1.0. "CP4" marks behaviour the control pr
 | a.5 | Lighting wall switch disabled | Banner on Lighting tab; status on System tab | ✔ |
 | b | **Preset 2: Audio Only Conference** | Start page card → Conference page | join D2 |
 | b.1 | No lighting preference; adjustable from panel | Lights left as found; scene buttons on the page | ✔ |
-| b.2 | No shade preference; adjustable from panel | Shades left as found; Open / Close on the page | ✔ |
+| b.2 | No shade preference; adjustable from panel | **Not provided.** Shade control removed in v0.2.0; no shade controller on AV-601 | — |
 | b.3 | Nominal audio levels | Volume returns to Med | ✔ |
 | b.4 | Audio from XLR plates or 3.5 mm on HDMI plates | "Play audio from" tiles; XLR channels in the mixer | ✔ |
 | b.5 | Audio and microphones unmuted | Mute and Mute mics clear | ✔ |

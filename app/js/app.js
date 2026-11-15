@@ -33,7 +33,6 @@
     mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/>',
     micoff: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M4 3l16 18"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/>',
-    shade: '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 7.5h16M4 12h16M12 12v4.5"/><circle cx="12" cy="18" r="1.2"/>',
     projector: '<rect x="2.5" y="8" width="19" height="9" rx="2"/><circle cx="15.5" cy="12.5" r="2.5"/><path d="M6 12.5h4M6 17v2M18 17v2"/>',
     rooms: '<rect x="3" y="5" width="18" height="14" rx="1"/><path d="M9 5v14M15 5v14"/>',
     system: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
@@ -271,10 +270,7 @@
         h('p', { class: 'hint' }, 'Plug a phone or laptop into the 3.5 mm jack on a wall plate, then choose that plate. Wired microphones use the XLR plates.'),
         h('div', { class: 'tile-grid' }, none, tiles)], 'grow'),
       h('div', { class: 'col' },
-        card('Lights', sceneButtons(s)),
-        C.features.shades ? card('Shades', h('div', { class: 'scene-row' },
-          fbAll(btn('btn-tile', [icon('up'), h('span', null, 'Open')], () => s.forEach((id) => B.pulse(R(id, 'd', 'shadeOpen')))), s.map((id) => R(id, 'd', 'shadeOpen'))),
-          fbAll(btn('btn-tile', [icon('down'), h('span', null, 'Close')], () => s.forEach((id) => B.pulse(R(id, 'd', 'shadeClose')))), s.map((id) => R(id, 'd', 'shadeClose'))))) : null));
+        card('Lights', sceneButtons(s))));
   }
 
   /* --- session: advanced tabs --- */
@@ -346,16 +342,6 @@
     })));
   }
 
-  function viewShades() {
-    const s = scope();
-    const set = (ids, n) => ids.forEach((id) => B.pulse(R(id, 'd', n)));
-    const block = (title, ids) => card(title, h('div', { class: 'tri-row' },
-      fbAll(btn('btn-tile btn-tall', [icon('up'), h('span', null, 'Open')], () => set(ids, 'shadeOpen')), ids.map((id) => R(id, 'd', 'shadeOpen'))),
-      btn('btn-tile btn-tall', [icon('stop'), h('span', null, 'Stop')], () => set(ids, 'shadeStop')),
-      fbAll(btn('btn-tile btn-tall', [icon('down'), h('span', null, 'Close')], () => set(ids, 'shadeClose')), ids.map((id) => R(id, 'd', 'shadeClose')))));
-    return h('div', { class: 'cols cols-even' }, s.map((id) => block(C.room(id).name + ' shades', [id])));
-  }
-
   function viewDisplays() {
     const s = scope();
     return h('div', { class: 'cols cols-even' }, s.map((id) => {
@@ -409,7 +395,6 @@
     { id: 'video', icon: 'video', name: 'Video', view: viewVideo, title: 'Video routing' },
     { id: 'audio', icon: 'mixer', name: 'Audio Mixer', view: viewAudio, title: 'Audio mixer and routing' },
     { id: 'lighting', icon: 'sun', name: 'Lighting', view: viewLighting, title: 'Lighting' },
-    { id: 'shades', icon: 'shade', name: 'Shades', view: viewShades, title: 'Shades', feature: 'shades' },
     { id: 'displays', icon: 'projector', name: 'Displays', view: viewDisplays, title: 'Projectors and screens' },
     { id: 'layout', icon: 'rooms', name: 'Room Layout', view: viewLayout, title: 'Room layout' },
     { id: 'system', icon: 'system', name: 'System', view: viewSystem, title: 'System', feature: 'techPage' }

@@ -27,7 +27,7 @@
     return {
       mode: 'off', phase: 'off', count: 0, total: 0,
       proj: 'off', projCount: 0, screen: 'up', picMute: false, vsrc: 0,
-      zones: [pct(100), pct(100), 0, 0], shade: 'open',
+      zones: [pct(100), pct(100), 0, 0],
       mics: mics, vol: VOL.med, mute: true, asrc: 0, afv: true,
       occupied: true, occWarn: 0, locked: true, lockout: false, backup: false
     };
@@ -223,8 +223,6 @@
       for (var s = 1; s <= 4; s++) {
         put('d', R('d', 'lightScene' + s), r.zones[0] === pct(SCENES[s][0]) && r.zones[1] === pct(SCENES[s][1]));
       }
-      put('d', R('d', 'shadeOpen'), r.shade === 'open');
-      put('d', R('d', 'shadeClose'), r.shade === 'closed');
       put('a', R('a', 'videoSource'), r.vsrc);
       for (var z = 0; z < 4; z++) put('a', R('a', 'lightZone' + (z + 1)), r.zones[z]);
       r.mics.forEach(function (m, k) {
@@ -290,9 +288,6 @@
         case 'screenDown': r.screen = 'down'; break;
         case 'screenUp': r.screen = 'up'; break;
         case 'picMute': if (r.proj === 'on') r.picMute = !r.picMute; break;
-        case 'shadeOpen': r.shade = 'open'; break;
-        case 'shadeClose': r.shade = 'closed'; break;
-        case 'shadeStop': r.shade = 'stopped'; break;
       }
     }
     sync();
