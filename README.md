@@ -48,6 +48,10 @@ Room volume, Low/Med/High, speaker mute, mic mute and Shut down stay on screen f
 
 `docs/SPEC_TRACE.md` maps every line of spec section 3.2 to where it lives in the interface.
 
+`docs/JennyWiley_UCI_v0.2_Review.pdf` is the page-by-page review set: every screen on its own
+page with a notes area, for the customer to print and mark up. Regenerate it with the scripts in
+`tools/review/`.
+
 ## Repository layout
 
 ```
